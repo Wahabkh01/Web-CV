@@ -1,626 +1,772 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
 <style>
+  @import url(https://fonts.googleapis.com/css?family=Varela+Round);
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-*{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
 
-html, body {
-  height: 100%;
-}
+  * {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
 
-body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  line-height: 1.5em;
-}
+  html,
+  body {
+    height: 100%;
+  }
 
-a {
-  color: #66cc99;
-  text-decoration: none;
-}
+  body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+  }
 
-.clearfix::after, .clearfix::before {
-  content: " ";
-  display: table;
-}
+  a {
+    color: #cc9466;
+    text-decoration: none;
+  }
 
-.clearfix::after {
-  clear: both;
-}
+  .clearfix::after,
+  .clearfix::before {
+    content: " ";
+    display: table;
+  }
 
-.bold {
-  color: #4a4e51;
-  font-weight: 400;
-}
+  .clearfix::after {
+    clear: both;
+  }
 
-.resume-wrapper {
-  position: relative;
-  text-align: center;
-  height: 100%;
-}
+  .bold {
+    color: #4a4e51;
+    font-weight: 400;
+  }
 
-.container {
-  min-height: 600px;
-  font-size: large;
-}
+  .resume-wrapper {
+    position: relative;
+    text-align: center;
+    height: 100%;
+  }
 
-.profile {
-  background: #e7dfdf;
-  width: 40%;
-  float: left;
-  color: #000000;
-}
-@media (max-width: 850px) {
+  .container {
+    min-height: 600px;
+    font-size: large;
+  }
+
   .profile {
-    width: 100%;
+    background: #e4e0d1;
+    width: 40%;
+    float: left;
+    color: #000000;
   }
-}
-.profile .name-wrapper {
-  float: left;
-  width: 60%;
-  padding: 10px;
-}
-.profile h1 {
-  font-size: 2.5em;
-  text-align: left;
-  font-family: "Varela Round", sans-serif;
-  color: #4a4e51;
-  text-transform: uppercase;
-  line-height: 1em;
-  padding-top: 40px;
-}
-@media (max-width: 1200px) {
+
+  @media (max-width: 850px) {
+    .profile {
+      width: 100%;
+    }
+  }
+
+  .profile .name-wrapper {
+    float: left;
+    width: 60%;
+    padding: 10px;
+  }
+
   .profile h1 {
-    padding-top: 20px;
+    font-size: 2.5em;
+    text-align: left;
+    font-family: "Varela Round", sans-serif;
+    color: #4a4e51;
+    text-transform: uppercase;
+    line-height: 1em;
+    padding-top: 40px;
   }
-}
-@media (max-width: 450px) {
-  .profile h1 {
-    font-size: 1.8em;
-    padding-top: 20px;
+
+  @media (max-width: 1200px) {
+    .profile h1 {
+      padding-top: 20px;
+    }
   }
-}
-.profile li {
-  margin-bottom: 10px;
-}
-.profile .picture-resume-wrapper {
-  width: 80%;
-  display: block;
-  float: left;
-  background: #66cc99;
-  padding: 20px;
-}
-@media (max-width: 1200px) {
+
+  @media (max-width: 450px) {
+    .profile h1 {
+      font-size: 1.8em;
+      padding-top: 20px;
+    }
+  }
+
+  .contact-social {
+            display: flex;
+            align-items: center;
+        }
+
+        .list-titles,
+        .list-content {
+            list-style-type: none; /* Remove bullets */
+            margin: 0;
+            padding: 0;
+        }
+
+        .list-titles li {
+            margin-left: 105px;
+        }
+
+        .list-titles i {
+            font-size: 2rem; /* Increase the size of the icons */
+        }
+
+        .list-content li {
+            margin-bottom: 10px;
+        }
+
+  .profile li {
+    margin-bottom: 10px;
+  }
+
   .profile .picture-resume-wrapper {
     width: 100%;
+    display: block;
+    float: left;
+    background: #c78c48;
+    padding: 20px;
   }
-}
-.profile .picture-resume {
-  width: 220px;
-  height: 220px;
-  background-size: cover;
-  border-radius: 10%;
-  margin-right: 0px;
-  display: table;
-  position: relative;
-  vertical-align: middle;
-}
-.profile .picture-resume span {
-  display: table-cell;
-  vertical-align: middle;
-  position: relative;
-  margin: 0 auto;
-  z-index: 10;
-  text-align: center;
-}
-.profile .picture-resume img {
-  border-radius: 50%;
-  width: 130px;
-}
-@media (max-width: 1500px) {
-  .profile .picture-resume img {
-    width: 80px;
-  }
-}
-@media (max-width: 1200px) {
-  .profile .picture-resume img {
-    width: 120px;
-    height: 120px;
-  }
-}
-@media (max-width: 1500px) {
-  .profile .picture-resume {
-    width: 150px;
-    height: 150px;
-  }
-}
-@media (max-width: 1200px) {
-  .profile .picture-resume {
-    width: 200px;
-    height: 200px;
-  }
-}
-@media (max-width: 450px) {
-  .profile .picture-resume {
-    width: 180px;
-    height: 180px;
-  }
-}
-.profile .contact-info {
-  margin-top: 100px;
-  font-weight: 300;
-}
-@media (max-width: 1200px) {
-  .profile .contact-info {
-    margin-top: 70px;
-  }
-}
-@media (max-width: 450px) {
-  .profile .contact-info {
-    margin-top: 50px;
-  }
-}
-.profile .list-titles {
-  float: left;
-  text-align: left;
-  font-weight: 600;
-  width: 40%;
-  color: #4a4e51;
-}
-.profile .list-content {
-  float: left;
-  width: 60%;
-  text-align: left;
-  font-weight: 300;
-}
-.profile .contact-presentation {
-  text-align: left;
-  font-weight: 300;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-@media (max-width: 1200px) {
-  .profile .contact-presentation {
-    margin-top: 70px;
-    margin-bottom: 70px;
-  }
-}
-@media (max-width: 850px) {
-  .profile .contact-presentation {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-}
-.profile svg {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.profile .st0, .profile .st1 {
-  fill: #66cc99;
-}
 
-.experience {
-  background: #0e4439;
-  width: 60%;
-  float: left;
-  position: relative;
-  color: #9099a0;
-  font-weight: 300;
-  min-height: 100%;
-  min-height: 100vh;
-}
-@media (max-width: 850px) {
-  .experience {
-    width: 100%;
+  @media (max-width: 1200px) {
+    .profile .picture-resume-wrapper {
+      width: 100%;
+    }
   }
-}
-.experience h3.experience-title {
-  color: #66cc99;
-  text-align: left;
-  text-transform: uppercase;
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  font-weight: 400;
-}
-.experience .company-wrapper {
-  width: 30%;
-  float: left;
-  text-align: left;
-  padding-right: 5%;
-  margin-bottom: 60px;
-}
-@media (max-width: 450px) {
-  .experience .company-wrapper {
+
+  .profile .picture-resume {
+    width: 320px;
+    height: 220px;
+    background-size: cover;
+    border-radius: 10%;
+    margin-right: 0px;
+    display: table;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .profile .picture-resume span {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    margin: 0 auto;
+    z-index: 10;
+    text-align: center;
+  }
+
+  .profile .picture-resume img {
+    border-radius: 50%;
+    width: 180px;
+  }
+
+  @media (max-width: 1500px) {
+    .profile .picture-resume img {
+      width: 80px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .profile .picture-resume img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  @media (max-width: 1500px) {
+    .profile .picture-resume {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .profile .picture-resume {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .profile .picture-resume {
+      width: 180px;
+      height: 180px;
+    }
+  }
+
+  .profile .contact-info {
+    margin-top: 100px;
+    font-weight: 300;
+  }
+
+  @media (max-width: 1200px) {
+    .profile .contact-info {
+      margin-top: 70px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .profile .contact-info {
+      margin-top: 50px;
+    }
+  }
+
+  .profile .list-titles {
+    float: left;
+    text-align: left;
+    font-weight: 600;
+    width: 40%;
+    color: #4a4e51;
+  }
+
+  .profile .list-content {
+    float: left;
+    width: 60%;
+    text-align: left;
+    font-weight: 300;
+  }
+
+  .profile .contact-presentation {
+    text-align: left;
+    font-weight: 300;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  @media (max-width: 1200px) {
+    .profile .contact-presentation {
+      margin-top: 70px;
+      margin-bottom: 70px;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .profile .contact-presentation {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .profile svg {
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .profile .st0,
+  .profile .st1 {
+    fill: #66cc99;
+  }
+
+  .experience {
+    background: #db7a1e;
+    width: 60%;
+    float: left;
+    position: relative;
+    color: #000000;
+    font-weight: 300;
+    min-height: 100%;
+    min-height: 100vh;
+  }
+
+  @media (max-width: 850px) {
+    .experience {
+      width: 100%;
+    }
+  }
+
+  .experience h3.experience-title {
+    color: #caf13d;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .experience .company-wrapper {
+    width: 30%;
+    float: left;
+    text-align: left;
+    padding-right: 5%;
+    margin-bottom: 60px;
+  }
+
+  @media (max-width: 450px) {
+    .experience .company-wrapper {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .experience .job-wrapper {
+    width: 70%;
+    float: left;
+    text-align: left;
+    padding-right: 5%;
+    margin-bottom: 60px;
+  }
+
+  @media (max-width: 450px) {
+    .experience .job-wrapper {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+
+  .experience .experience-title {
+    color: rgb(210, 228, 51);
+    margin-bottom: 15px;
+  }
+
+  .section-padding {
+    padding: 60px 60px 40px 40px;
+  }
+
+  @media (max-width: 850px) {
+    .section-padding {
+      padding: 80px 15% 40px 10%;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .section-padding {
+      padding: 40px 10% 20px 5%;
+    }
+  }
+
+  .section-wrapper {
+    width: 50%;
+    float: left;
+    text-align: left;
+    color: #000000;
+    font-weight: 300;
     margin-bottom: 20px;
   }
-}
-.experience .job-wrapper {
-  width: 70%;
-  float: left;
-  text-align: left;
-  padding-right: 5%;
-  margin-bottom: 60px;
-}
-@media (max-width: 450px) {
-  .experience .job-wrapper {
+
+  @media (max-width: 450px) {
+    .section-wrapper {
+      width: 100%;
+    }
+  }
+
+  .section-wrapper:nth-child(3) {
+    padding-right: 8%;
+  }
+
+  .section-wrapper h3.section-title {
+    color: rgb(210, 228, 51);
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .section-wrapper .skill-percentage {
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .section-wrapper .skill-percentage::after {
+    content: "";
     width: 100%;
-    margin-bottom: 40px;
+    height: 6px;
+    background: rgb(63, 42, 3);
+    display: block;
+    margin-top: 3px;
   }
-}
-.experience .experience-title {
-  color: white;
-  margin-bottom: 15px;
-}
 
-.section-padding {
-  padding: 60px 60px 40px 40px;
-}
-@media (max-width: 850px) {
-  .section-padding {
-    padding: 80px 15% 40px 10%;
+  .section-wrapper .skill-percentage::before {
+    content: "";
+    height: 6px;
+    background: #e0a016;
+    position: absolute;
+    margin-top: 3px;
+    bottom: 0;
   }
-}
-@media (max-width: 450px) {
-  .section-padding {
-    padding: 40px 10% 20px 5%;
-  }
-}
 
-.section-wrapper {
-  width: 50%;
-  float: left;
-  text-align: left;
-  color: #9099a0;
-  font-weight: 300;
-  margin-bottom: 20px;
-}
-@media (max-width: 450px) {
-  .section-wrapper {
-    width: 100%;
-  }
-}
-.section-wrapper:nth-child(3) {
-  padding-right: 8%;
-}
-.section-wrapper h3.section-title {
-  color: #66cc99;
-  text-align: left;
-  text-transform: uppercase;
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  font-weight: 400;
-}
-.section-wrapper .skill-percentage {
-  margin-bottom: 10px;
-  position: relative;
-}
-.section-wrapper .skill-percentage::after {
-  content: "";
-  width: 100%;
-  height: 6px;
-  background: #4a4e51;
-  display: block;
-  margin-top: 3px;
-}
-.section-wrapper .skill-percentage::before {
-  content: "";
-  height: 6px;
-  background: #66cc99;
-  position: absolute;
-  margin-top: 3px;
-  bottom: 0;
-}
-.section-wrapper .skill-percentage:nth-child(1)::before {
-  width: 80%;
-  -webkit-animation: skill_1 0.6s ease;
-          animation: skill_1 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(2)::before {
-  width: 90%;
-  -webkit-animation: skill_2 0.6s ease;
-          animation: skill_2 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(3)::before {
-  width: 50%;
-  -webkit-animation: skill_3 0.6s ease;
-          animation: skill_3 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(4)::before {
-  width: 60%;
-  -webkit-animation: skill_4 0.6s ease;
-          animation: skill_4 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(5)::before {
-  width: 70%;
-  -webkit-animation: skill_5 0.6s ease;
-          animation: skill_5 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(6)::before {
-  width: 70%;
-  -webkit-animation: skill_6 0.6s ease;
-          animation: skill_6 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(7)::before {
-  width: 70%;
-  -webkit-animation: skill_6 0.6s ease;
-          animation: skill_6 0.6s ease;
-}
-
-@-webkit-keyframes skill_1 {
-  from {
-    width: 0%;
-  }
-  to {
+  .section-wrapper .skill-percentage:nth-child(1)::before {
     width: 80%;
+    -webkit-animation: skill_1 0.6s ease;
+    animation: skill_1 0.6s ease;
   }
-}
 
-@keyframes skill_1 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 80%;
-  }
-}
-@-webkit-keyframes skill_2 {
-  from {
-    width: 0%;
-  }
-  to {
+  .section-wrapper .skill-percentage:nth-child(2)::before {
     width: 90%;
+    -webkit-animation: skill_2 0.6s ease;
+    animation: skill_2 0.6s ease;
   }
-}
-@keyframes skill_2 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 90%;
-  }
-}
-@-webkit-keyframes skill_3 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 50%;
-  }
-}
-@keyframes skill_3 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 50%;
-  }
-}
-@-webkit-keyframes skill_4 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
-  }
-}
-@keyframes skill_4 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
-  }
-}
-@-webkit-keyframes skill_5 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-@keyframes skill_5 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-@-webkit-keyframes skill_6 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-@keyframes skill_6 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-@-webkit-keyframes skill_7 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-@keyframes skill_7 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
 
+  .section-wrapper .skill-percentage:nth-child(3)::before {
+    width: 50%;
+    -webkit-animation: skill_3 0.6s ease;
+    animation: skill_3 0.6s ease;
+  }
 
+  .section-wrapper .skill-percentage:nth-child(4)::before {
+    width: 60%;
+    -webkit-animation: skill_4 0.6s ease;
+    animation: skill_4 0.6s ease;
+  }
+
+  .section-wrapper .skill-percentage:nth-child(5)::before {
+    width: 70%;
+    -webkit-animation: skill_5 0.6s ease;
+    animation: skill_5 0.6s ease;
+  }
+
+  .section-wrapper .skill-percentage:nth-child(6)::before {
+    width: 70%;
+    -webkit-animation: skill_6 0.6s ease;
+    animation: skill_6 0.6s ease;
+  }
+
+  .section-wrapper .skill-percentage:nth-child(7)::before {
+    width: 70%;
+    -webkit-animation: skill_6 0.6s ease;
+    animation: skill_6 0.6s ease;
+  }
+
+  @-webkit-keyframes skill_1 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 80%;
+    }
+  }
+
+  @keyframes skill_1 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 80%;
+    }
+  }
+
+  @-webkit-keyframes skill_2 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 90%;
+    }
+  }
+
+  @keyframes skill_2 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 90%;
+    }
+  }
+
+  @-webkit-keyframes skill_3 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 50%;
+    }
+  }
+
+  @keyframes skill_3 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 50%;
+    }
+  }
+
+  @-webkit-keyframes skill_4 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 60%;
+    }
+  }
+
+  @keyframes skill_4 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 60%;
+    }
+  }
+
+  @-webkit-keyframes skill_5 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 70%;
+    }
+  }
+
+  @keyframes skill_5 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 70%;
+    }
+  }
+
+  @-webkit-keyframes skill_6 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 70%;
+    }
+  }
+
+  @keyframes skill_6 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 70%;
+    }
+  }
+
+  @-webkit-keyframes skill_7 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 70%;
+    }
+  }
+
+  @keyframes skill_7 {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 70%;
+    }
+  }
 </style>
 
 <body>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<div class="resume-wrapper">
-	<section class="profile section-padding">
-	    <div class="container">
-			<div class="picture-resume-wrapper">
-        <div class="picture-resume">
-        <span><img src="Wahab.jpg" alt="" /></span>
-        <div class="name-wrapper">
-            <h1>Abdul <br/>Wahab</h1>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <div class="resume-wrapper">
+    <section class="profile section-padding">
+      <div class="container">
+        <div class="picture-resume-wrapper">
+          <div class="picture-resume">
+            <span><img src="Wahab.png" alt="" /></span>
+            <div class="name-wrapper">
+              <h1>Abdul <br />Wahab</h1>
+            </div>
+
           </div>
-        
-      </div>
-         <div class="clearfix"></div>
- </div>
-      
-      <div class="clearfix"></div>
-      <div class="contact-info clearfix">
-      	<ul class="list-titles">
-      		<li>Call</li>
-      		<li>Mail</li>
-      		<li>Web</li>
-      		<li>Home</li>
-      	</ul>
-        <ul class="list-content ">
-        	<li>0317 4102576</li> 
-        	<li>wahab8761.aw@gmail.com</li> 
-        	<li>Lahore, Pakistan</li> 
-        </ul>
-      </div>
-      <div class="contact-presentation">
-      	<p><span class="bold">Motivated</span> and skilled undergraduate Software Engineer seeking a challenging position to apply my knowledge and expertise in Python, Java, C#, HTML, CSS, and JavaScript. Dedicated to developing high-quality software solutions and collaborating effectively within cross-functional teams. </p>
-      </div>
-      <div class="contact-social clearfix">
-      	<ul class="list-titles">
-      		<li>facebook</li>
-      		<li>Github</li>
-      		<li>Linkdn</li>
-      	</ul>
-        <ul class="list-content"> 
-      		<li><a href=" https://www.facebook.com/share/2o5kvpEguRKuThrY/?mibextid=WC7FNe ">@Wahab</a></li>
-      		<li><a href=" https://github.com/Wahabkh01 "> Wahab01</a></li> 
-      		<li><a href=" https://www.linkedin.com/in/abdul-wahab-952b41238?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Abdul Wahab</a></li> 
-      	</ul>
-      </div>
-		</div>
-	</section>
-  
-  <section class="experience section-padding">
-  	<div class="container">
-  		<h3 class="experience-title">Experience</h3>
-      
-      <div class="experience-wrapper">
-      	<div class="company-wrapper clearfix">
-      		<div class="experience-title">Fiverr</div> 
-          <div class="time">June 2022 - Present</div> 
-      	</div>
-        
-        <div class="job-wrapper clearfix">
-        	<div class="experience-title">Game developer </div>
-          <div class="company-description">
-          	<p>Developed an animation system that allowed for realistic character movementsandinteractions</p>
-          </div>
+          <div class="clearfix"></div>
         </div>
-        
-        <div class="company-wrapper clearfix">
-      		<div class="experience-title">Freelance</div>
-          <div class="time">June 2022 - Present</div> 
-      	</div>
-        
-         <div class="job-wrapper clearfix">
-        	<div class="experience-title">Checkers / chess Game developer</div> 
-          <div class="company-description">
-          	<p>Managed the flow of the game and kept track ot the score and game clock</p> 
-          </div>
+
+        <div class="clearfix"></div>
+        <div class="contact-info clearfix">
+          <ul class="list-titles">
+            <li><i class="fas fa-phone"></i></li>
+            <li><i class="fas fa-envelope"></i></li>
+            <li><i class="fas fa-home"></i></li>
+        </ul> 
+          <ul class="list-content ">
+            <li>0317 4102576</li>
+            <li>wahab8761.aw@<br>gmail.com</li>
+            <li>Lahore, Pakistan</li>
+          </ul>
         </div>
-        
-        <div class="company-wrapper clearfix">
-      		<div class="experience-title">Freelance Upwork</div> 
-          <div class="time">March2023- Present</div> 
-      	</div> 
-        
-         <div class="job-wrapper clearfix">
-        	<div class="experience-title">3D Model in Java </div> 
-          <div class="company-description">
-          	<p>created a 3D model timetable using Java.</p> 
-          </div>
+        <div class="contact-presentation">
+          <p><span class="bold">Passionate</span> game developer with expertise in Unity and C#, skilled in basic level 3D modeling,
+            animation, and game mechanics. Committed to creating high-quality games and eager to collaborate on
+            innovative projects that bring engaging experiences to life.</p>
         </div>
-        
+        <div class="contact-social clearfix">
+          <ul class="list-titles">
+              <li><i class="fab fa-facebook"></i></li>
+              <li><i class="fab fa-github"></i></li>
+              <li><i class="fab fa-linkedin"></i></li>
+          </ul>        
+          <ul class="list-content">
+              <li><a href="https://www.facebook.com/share/2o5kvpEguRKuThrY/?mibextid=WC7FNe">@Wahab</a></li>
+              <li><a href="https://github.com/Wahabkh01">Wahab01</a></li>
+              <li><a href="https://www.linkedin.com/in/abdul-wahab-952b41238?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Abdul Wahab</a></li>
+          </ul>
       </div>
-      
+      </div>
+      <div>
       <div class="section-wrapper clearfix">
-      	<h3 class="section-title">Skills</h3> 
-        	<ul>
-        		<li class="skill-percentage">HTML / HTML5</li>
-        		<li class="skill-percentage">CSS / CSS3 / SASS / LESS</li>
-        		<li class="skill-percentage">Java</li>
-        		<li class="skill-percentage">C# / C/ C++</li>
-        		<li class="skill-percentage">Unity game environment</li>
-        		<li class="skill-percentage">Unnreal Engine</li>
-            
-        	</ul>
+        <h3 class="section-title" style="color: #423906;">Skills</h3>
+        <ul>
+            <li class="skill-percentage">Unity Game Development</li>
+            <li class="skill-percentage">C#</li>
+            <li class="skill-percentage">Godot Engine</li>
+            <li class="skill-percentage">Python (Basic)</li>
+            <li class="skill-percentage">GDScript</li>
+        </ul>
+    </div>
+    </section>
+
+    <section class="experience section-padding">
+      <div class="container">
+        <h3 class="experience-title">Experience</h3>
+
+        <div class="experience-wrapper">
+          <div class="company-wrapper clearfix">
+            <div class="experience-title">TechWorks Studios</div>
+            <div class="time">June 2022 - Present</div>
+          </div>
+
+          <div class="job-wrapper clearfix">
+            <div class="experience-title">Junior Game Developer</div>
+            <div class="company-description">
+              <p>Worked on multiple game genres including platformers, puzzle games, and simulation games using Unity.
+                Focused on implementing core gameplay mechanics, character control, and environment interaction.
+                Contributed to the optimization of game performance, resulting in smoother gameplay across different
+                platforms.</p>
+            </div>
+          </div>
+
+          <div class="company-wrapper clearfix">
+            <div class="experience-title">PixelPerfect Games</div>
+            <div class="time">June 2022 - Present</div>
+          </div>
+
+          <div class="job-wrapper clearfix">
+            <div class="experience-title">Game Developer (Checkers/Chess)</div>
+            <div class="company-description">
+              <p>Developed a chess and checkers game using Unity, focusing on AI development for different difficulty
+                levels and implementing a user-friendly GUI. Enhanced player experience through polished animations and
+                seamless gameplay.</p>
+            </div>
+          </div>
+
+          <div class="company-wrapper clearfix">
+            <div class="experience-title">InnovateX Labs</div>
+            <div class="time">March 2023 - Present</div>
+          </div>
+
+          <div class="job-wrapper clearfix">
+            <div class="experience-title">Junior Game Developer</div>
+            <div class="company-description">
+              <p>Assisted in the development of a 3D simulation game in Unity, focusing on the creation of interactive
+                3D environments. Integrated physics-based interactions and optimized rendering performance for both PC
+                and mobile platforms.</p>
+            </div>
+          </div>
+
+
+          <div class="section-wrapper clearfix">
+            <h3 class="section-title">Projects</h3>
+            <ul>
+                <li>Horror Hospital</li>
+                <li>Eagle AR</li>
+                <li>Time Platformers</li>
+                <li>Chess AI</li>
+            </ul>
+        </div>
         
-      </div>
+        <div class="section-wrapper clearfix">
+            <h3 class="section-title">Samples</h3>
+            <p>Explore my portfolio of game development projects, including videos, showcasing my work in Unity and other game engines.</p>
+            <ul>
+                <li><a href="https://drive.google.com/drive/folders/1mXC4GbkQ1DD4mnH5ohLRwrlk1lLNB48b?usp=drive_link" style="color: #cadb34;">Horror Hospital Demo</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1mXC4GbkQ1DD4mnH5ohLRwrlk1lLNB48b?usp=drive_link" style="color: #cadb34;">Eagle AR Showcase</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1mXC4GbkQ1DD4mnH5ohLRwrlk1lLNB48b?usp=drive_link" style="color: #cadb34;">Time Platformers Playable Version</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1mXC4GbkQ1DD4mnH5ohLRwrlk1lLNB48b?usp=drive_link" style="color: #cadb34;">Chess AI Gameplay Video</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1mXC4GbkQ1DD4mnH5ohLRwrlk1lLNB48b?usp=drive_link" style="color: #cadb34;">Run Boy Run Trailer</a></li>
+            </ul>
+        </div>
 
-      
-  	</div>
-  </section>
-  
-  <div class="clearfix"></div>
-</div>
+        <div class="section-wrapper clearfix">
+          <h3 class="section-title">Upcoming Projects</h3>
+          <ul>
+              <li>Space Explorer VR</li>
+              <li>Urban Survival: The Last Stand</li>
+              <li>Quantum Leap Racing</li>
+              <li>Mythical Realms RPG</li>
+              <li>Virtual Chess Master</li>
+              <li>Adventure Quest AR</li>
+          </ul>
+      </div>      
+        
+    </section>
 
-<script>
 
 
-    var select = function(s) {
+    <div class="clearfix"></div>
+  </div>
+
+  <script>
+
+
+    var select = function (s) {
       return document.querySelector(s);
     }
-    
-    function randomBetween(min,max)
-    {
-        var number = Math.floor(Math.random()*(max-min+1)+min);
-      
-        if ( number !== 0 ){
-          return number;
-        }else {
-          return 0.5;
-        }
+
+    function randomBetween(min, max) {
+      var number = Math.floor(Math.random() * (max - min + 1) + min);
+
+      if (number !== 0) {
+        return number;
+      } else {
+        return 0.5;
+      }
     }
-    
+
     var tl = new TimelineMax();
-    
-    for(var i = 0; i < 20; i++){
-    
+
+    for (var i = 0; i < 20; i++) {
+
       var t = TweenMax.to(select('.bubble' + i), randomBetween(1, 1.5), {
         x: randomBetween(12, 15) * (randomBetween(-1, 1)),
-        y: randomBetween(12, 15) * (randomBetween(-1, 1)), 
-        repeat:-1,
-        repeatDelay:randomBetween(0.2, 0.5),
-        yoyo:true,
-        ease:Elastic.easeOut.config(1, 0.5)
+        y: randomBetween(12, 15) * (randomBetween(-1, 1)),
+        repeat: -1,
+        repeatDelay: randomBetween(0.2, 0.5),
+        yoyo: true,
+        ease: Elastic.easeOut.config(1, 0.5)
       })
-    
-      tl.add(t, (i+1)/0.6)
+
+      tl.add(t, (i + 1) / 0.6)
     }
-    
+
     tl.seek(50);
-    </script>
+  </script>
 
 </body>
 
